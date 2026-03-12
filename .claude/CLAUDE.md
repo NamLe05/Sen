@@ -189,6 +189,38 @@ for await result in Transaction.updates {
 
 ---
 
+## UI Style System
+
+**Never hardcode fonts, sizes, spacing, padding, corner radii, or colors in views.**
+All UI constants must reference the style files in `Sen/Shared/Extensions/`:
+
+| What | Style file | Type |
+|---|---|---|
+| Fonts / type scale | `Font+Sen.swift` | `Font` extension — `senBody`, `senHeadline`, etc. |
+| Colors | `Color+Sen.swift` | `Color` extension — `textPrimary`, `bgSecondary`, etc. |
+| Spacing | `Color+Sen.swift` | `Spacing` enum — `Spacing.md`, `Spacing.lg`, etc. |
+| Corner radii | `Color+Sen.swift` | `Radius` enum — `Radius.md`, `Radius.lg`, etc. |
+
+```swift
+// ✅
+Text("Hello")
+    .font(.senBody)
+    .foregroundColor(.textSecondary)
+    .padding(Spacing.md)
+    .cornerRadius(Radius.md)
+
+// ❌
+Text("Hello")
+    .font(.system(size: 16))
+    .foregroundColor(Color(hex: "#6B6B6B"))
+    .padding(16)
+    .cornerRadius(12)
+```
+
+When a new token is needed, **add it to the style file first**, then use it. Never introduce a one-off value in a view.
+
+---
+
 ## Code Quality Rules
 
 - No `print()` in production. Use `Logger` (OSLog) with subsystem/category.

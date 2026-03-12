@@ -15,7 +15,7 @@ final class AppState {
     }
 }
 
-enum SenError: Error, Sendable {
+nonisolated enum SenError: Error, Sendable {
     case network(String)
     case auth(String)
     case unknown(String)

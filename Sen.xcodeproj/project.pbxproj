@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		3D5B9BA72F62F92B0011FDFC /* ClerkKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3D5B9BA62F62F92B0011FDFC /* ClerkKit */; };
+		3D5B9BA92F62F92B0011FDFC /* ClerkKitUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3D5B9BA82F62F92B0011FDFC /* ClerkKitUI */; };
+		3D5B9BAC2F62F92B0011FDFC /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 3D5B9BAB2F62F92B0011FDFC /* Lottie */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		3D5B9B412F6284DD0011FDFC /* Sen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +29,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D5B9BA72F62F92B0011FDFC /* ClerkKit in Frameworks */,
+				3D5B9BA92F62F92B0011FDFC /* ClerkKitUI in Frameworks */,
+				3D5B9BAC2F62F92B0011FDFC /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +74,9 @@
 			);
 			name = Sen;
 			packageProductDependencies = (
+				3D5B9BA62F62F92B0011FDFC /* ClerkKit */,
+				3D5B9BA82F62F92B0011FDFC /* ClerkKitUI */,
+				3D5B9BAB2F62F92B0011FDFC /* Lottie */,
 			);
 			productName = Sen;
 			productReference = 3D5B9B412F6284DD0011FDFC /* Sen.app */;
@@ -94,6 +106,10 @@
 			);
 			mainGroup = 3D5B9B382F6284DD0011FDFC;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				3D5B9BA52F62F92B0011FDFC /* XCRemoteSwiftPackageReference "clerk-ios" */,
+				3D5B9BAA2F62F92B0011FDFC /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 3D5B9B422F6284DD0011FDFC /* Products */;
 			projectDirPath = "";
@@ -255,12 +271,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 67Q2VN6V3G;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -287,12 +299,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 67Q2VN6V3G;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -332,6 +340,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3D5B9BA52F62F92B0011FDFC /* XCRemoteSwiftPackageReference "clerk-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/clerk/clerk-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.5;
+			};
+		};
+		3D5B9BAA2F62F92B0011FDFC /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3D5B9BA62F62F92B0011FDFC /* ClerkKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D5B9BA52F62F92B0011FDFC /* XCRemoteSwiftPackageReference "clerk-ios" */;
+			productName = ClerkKit;
+		};
+		3D5B9BA82F62F92B0011FDFC /* ClerkKitUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D5B9BA52F62F92B0011FDFC /* XCRemoteSwiftPackageReference "clerk-ios" */;
+			productName = ClerkKitUI;
+		};
+		3D5B9BAB2F62F92B0011FDFC /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D5B9BAA2F62F92B0011FDFC /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3D5B9B392F6284DD0011FDFC /* Project object */;
 }

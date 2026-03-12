@@ -1,8 +1,6 @@
 import Foundation
 
-// TODO: Local representation of the Convex users table record
-
-struct User: Codable, Sendable, Identifiable {
+nonisolated struct User: Codable, Sendable, Identifiable {
     let id: String
     let clerkId: String
     let name: String

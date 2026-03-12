@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c \"from PIL import Image, ImageDraw; print\\(''PIL available''\\)\")",
+      "Bash(fc-query /Users/nam/Documents/Sen/Sen/Shared/Assets/Fonts/DMSans_18pt-Bold.ttf)",
+      "Bash(pip3 install:*)",
+      "Bash(python3 -c \"from PIL import Image; print\\(''ok''\\)\")",
+      "Bash(magick --version)",
+      "Bash(python3 -c \":*)",
+      "Bash(find /Users/nam/Documents/Sen -name *boy* -o -name *girl*)",
+      "Bash(python3:*)"
+    ]
+  }
+}

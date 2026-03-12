@@ -1,0 +1,30 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build & Run Sen (iPhone 17 Pro Max)",
+      "type": "shell",
+      "command": "set -euo pipefail; echo '🔨 Building...'; xcodebuild -project '${workspaceFolder}/Sen.xcodeproj' -scheme Sen -destination 'platform=iOS Simulator,id=76E28FFB-15E3-440B-8E28-BA8430063D44' -configuration Debug build 2>&1 | grep -E '^(Build succeeded|.*error:|.*warning:|Compiling|Linking|.*(FAILED|SUCCEEDED))' | grep -v '^$' || { echo '❌ Build failed'; exit 1; }; APP=$(xcodebuild -project '${workspaceFolder}/Sen.xcodeproj' -scheme Sen -destination 'platform=iOS Simulator,id=76E28FFB-15E3-440B-8E28-BA8430063D44' -configuration Debug -showBuildSettings 2>/dev/null | awk '/CODESIGNING_FOLDER_PATH/{print $3}'); echo \"📦 Installing $APP\"; xcrun simctl terminate 76E28FFB-15E3-440B-8E28-BA8430063D44 com.nle7147.Sen 2>/dev/null || true; xcrun simctl install 76E28FFB-15E3-440B-8E28-BA8430063D44 \"$APP\" && xcrun simctl launch 76E28FFB-15E3-440B-8E28-BA8430063D44 com.nle7147.Sen && echo '✅ Launched'",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": [
+        {
+          "owner": "xcode",
+          "fileLocation": "absolute",
+          "pattern": {
+            "regexp": "^(/.+):(\\d+):(\\d+):\\s+(warning|error):\\s+(.+)$",
+            "file": 1,
+            "line": 2,
+            "column": 3,
+            "severity": 4,
+            "message": 5
+          }
+        }
+      ]
+    }
+  ]
+}

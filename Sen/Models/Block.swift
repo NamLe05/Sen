@@ -1,8 +1,6 @@
 import Foundation
 
-// TODO: Single time block within a DayPlan — represents one scheduled activity
-
-struct Block: Codable, Sendable, Identifiable, Equatable {
+nonisolated struct Block: Codable, Sendable, Identifiable, Equatable {
     let id: String
     let title: String
     let startTime: String
