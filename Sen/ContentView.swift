@@ -1,24 +1,16 @@
-//
-//  ContentView.swift
-//  Sen
-//
-//  Created by Nam Le on 3/11/26.
-//
-
 import SwiftUI
+
+// TODO: Root tab view — Today, Plan, Calendar tabs
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            TodayView()
+                .tabItem { Label("Today", systemImage: "sun.max") }
+            PlanView()
+                .tabItem { Label("Plan", systemImage: "mic") }
+            CalendarView()
+                .tabItem { Label("Calendar", systemImage: "calendar") }
         }
-        .padding()
     }
-}
-
-#Preview {
-    ContentView()
 }
